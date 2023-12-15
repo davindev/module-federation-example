@@ -1,10 +1,9 @@
-import React, { Suspense } from 'react';
-const Header = React.lazy(() => import('layout/Header'));
+import React from 'react';
 
 export default function App() {
   return (
-    <Suspense fallback="loading">
-      <Header />
-    </Suspense>
+    <div>
+      Kidsnote
+    </div>
   );
 }
