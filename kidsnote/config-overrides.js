@@ -17,9 +17,10 @@ module.exports = {
         }),
         new ModuleFederationPlugin({
           name: 'kidsnote',
-          remotes: {
-            layout: 'layout@http://localhost:3000/remoteEntry.js',
-          },
+          filename: 'remoteEntry.js',
+          exposes: {
+            // './Header': './src/components/Header',
+          }
         }),
       ],
       module: {
@@ -40,7 +41,7 @@ module.exports = {
     return (proxy, allowedHost) => ({
       ...configFunction(proxy, allowedHost),
       open: true,
-      port: 3001,
+      port: 3002,
       host: 'localhost',
       static: {
         directory: path.resolve(__dirname, 'build'),
