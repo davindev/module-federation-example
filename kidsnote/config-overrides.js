@@ -19,7 +19,7 @@ module.exports = {
           name: 'kidsnote',
           filename: 'remoteEntry.js',
           exposes: {
-            // './Header': './src/components/Header',
+            './Service': './src/Service',
           }
         }),
       ],
