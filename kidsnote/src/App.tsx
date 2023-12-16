@@ -1,12 +1,13 @@
 import React from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 
-import Service from './Service';
+import route from './AppRoute';
 
 export default function App() {
   return (
     <ChakraProvider>
-      <Service />
+      <RouterProvider router={createBrowserRouter([route])} />
     </ChakraProvider>
   );
 }

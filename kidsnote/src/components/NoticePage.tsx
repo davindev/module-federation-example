@@ -1,16 +1,14 @@
 import React from 'react';
 import { Center } from '@chakra-ui/react';
 
-export default function Service() {
+export default function NoticePage() {
   return (
     <Center
-      minHeight="calc(100vh - 180px)"
-      paddingTop="60px"
-      backgroundColor="#f8f9fa"
+      height="100%"
       fontSize="20px"
       fontWeight="500"
     >
-      Kidsnote Application
+      Notice Page
     </Center>
   );
 }

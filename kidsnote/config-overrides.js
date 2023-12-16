@@ -19,7 +19,7 @@ module.exports = {
           name: 'kidsnote',
           filename: 'remoteEntry.js',
           exposes: {
-            './Service': './src/Service',
+            './AppRoute': './src/AppRoute',
           },
           shared: {
             react: {
