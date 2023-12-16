@@ -16,6 +16,7 @@ export default function Header() {
       <Heading
         as="h1"
         fontSize="22px"
+        fontWeight="700"
         color="#208df9"
       >
         Kidsnote
@@ -41,11 +42,11 @@ export default function Header() {
         alignItems="center"
       >
         <BellIcon
-          boxSize={6}
+          boxSize="22px"
           color="#8c95a1"
         />
         <SettingsIcon
-          boxSize={5}
+          boxSize="20px"
           color="#8c95a1"
         />
       </Flex>

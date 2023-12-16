@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import { Spinner } from '@chakra-ui/react'
 
-export default function App() {
+const Header = React.lazy(() => import('layout/Header'));
+const Footer = React.lazy(() => import('layout/Footer'));
+const Service = React.lazy(() => import('kidsnote/Service'));
+
+export default function App() {  
   return (
-    <div className="App">
-      123
-    </div>
+    <Suspense fallback={<Spinner />}>
+      <Header />
+      <Service />
+      <Footer />
+    </Suspense>
   );
 }

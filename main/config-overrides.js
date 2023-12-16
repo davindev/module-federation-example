@@ -6,7 +6,7 @@ module.exports = {
   webpack: (config) => {
     return {
       ...config,
-      entry: './src/index.tsx',
+      entry: './src/index',
       mode: 'development',
       output: {
         path: path.resolve(__dirname, 'build'),
@@ -16,10 +16,15 @@ module.exports = {
           template: './public/index.html',
         }),
         new ModuleFederationPlugin({
-          name: 'kidsnote',
+          name: 'main',
           remotes: {
             layout: 'layout@http://localhost:3000/remoteEntry.js',
-            kidsnote: 'layout@http://localhost:3002/remoteEntry.js',
+            kidsnote: 'kidsnote@http://localhost:3002/remoteEntry.js',
+          },
+          shared: {
+            react: {
+              eager: true,
+            },
           },
         }),
       ],
@@ -40,7 +45,6 @@ module.exports = {
   devServer: (configFunction) => {
     return (proxy, allowedHost) => ({
       ...configFunction(proxy, allowedHost),
-      open: true,
       port: 3001,
       host: 'localhost',
       static: {

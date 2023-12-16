@@ -6,7 +6,7 @@ module.exports = {
   webpack: (config) => {
     return {
       ...config,
-      entry: './src/index.tsx',
+      entry: './src/index',
       mode: 'development',
       output: {
         path: path.resolve(__dirname, 'build'),
@@ -20,7 +20,12 @@ module.exports = {
           filename: 'remoteEntry.js',
           exposes: {
             './Service': './src/Service',
-          }
+          },
+          shared: {
+            react: {
+              eager: true,
+            },
+          },
         }),
       ],
       module: {
@@ -40,7 +45,6 @@ module.exports = {
   devServer: (configFunction) => {
     return (proxy, allowedHost) => ({
       ...configFunction(proxy, allowedHost),
-      open: true,
       port: 3002,
       host: 'localhost',
       static: {

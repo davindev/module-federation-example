@@ -20,25 +20,32 @@ module.exports = {
           filename: 'remoteEntry.js',
           exposes: {
             './Header': './src/components/Header',
-          }
+            './Footer': './src/components/Footer',
+          },
+          shared: {
+            react: {
+              eager: true,
+            },
+          },
         }),
       ],
       module: {
-        rules: [{
-          test: /\.(ts|tsx)$/i,
-          loader: 'ts-loader',
-          exclude: ['/node_modules/'],
-        }],
+        rules: [
+          {
+            test: /\.(ts|tsx)$/i,
+            loader: 'ts-loader',
+            exclude: ['/node_modules/'],
+          },
+        ],
       },
       resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
       },
-    }
+    };
   },
   devServer: (configFunction) => {
     return (proxy, allowedHost) => ({
       ...configFunction(proxy, allowedHost),
-      open: true,
       port: 3000,
       host: 'localhost',
       static: {
