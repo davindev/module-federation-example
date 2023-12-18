@@ -6,7 +6,9 @@ export default function Layout() {
   return (
     <Flex height="100%">
       <div>키즈노트 LNB</div>
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </Flex>
   );
 }
