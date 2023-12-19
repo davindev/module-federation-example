@@ -9,12 +9,12 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <Flex
-      height="100vh"
-      paddingTop="60px"
-    >
+    <Flex>
       <Lnb />
-      <Box width="calc(100% - 250px)">
+      <Box
+        width="calc(100vw - 250px)"
+        height="calc(100vh - 60px - 180px)"
+      >
         {children}
       </Box>
     </Flex>

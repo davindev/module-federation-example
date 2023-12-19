@@ -7,7 +7,7 @@ export default function Lnb() {
       rowGap="34px"
       flexDirection="column"
       width="250px"
-      height="100%"
+      height="100vh"
       padding="24px"
       backgroundColor="#ffffff"
       borderRight="1px solid #e9ecef"
