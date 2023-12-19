@@ -1,8 +1,7 @@
 import React, { Suspense } from 'react';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { ChakraProvider, Center, Spinner } from '@chakra-ui/react';
 
-import route from './AppRoute';
+import AppRoutes from './AppRoutes';
 
 export default function App() {
   return (
@@ -18,7 +17,7 @@ export default function App() {
           />
         </Center>
       )}>
-        <RouterProvider router={createBrowserRouter([route])} />
+        <AppRoutes />
       </Suspense>
     </ChakraProvider>
   );
