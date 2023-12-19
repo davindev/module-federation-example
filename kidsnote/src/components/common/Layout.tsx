@@ -1,14 +1,22 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import { Flex } from '@chakra-ui/react';
+import { Flex, Box } from '@chakra-ui/react';
 
-export default function Layout() {
+import Lnb from './Lnb';
+
+interface Props {
+  children: React.ReactNode;
+}
+
+export default function Layout({ children }: Props) {
   return (
-    <Flex height="100%">
-      <div>키즈노트 LNB</div>
-      <main>
-        <Outlet />
-      </main>
+    <Flex
+      height="100vh"
+      paddingTop="60px"
+    >
+      <Lnb />
+      <Box width="calc(100% - 250px)">
+        {children}
+      </Box>
     </Flex>
   );
 }
