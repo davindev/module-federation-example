@@ -1,13 +1,10 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import { Flex, Box } from '@chakra-ui/react';
 
 import Lnb from './Lnb';
 
-interface Props {
-  children: React.ReactNode;
-}
-
-export default function Layout({ children }: Props) {
+export default function Layout() {
   return (
     <Flex>
       <Lnb />
@@ -15,7 +12,7 @@ export default function Layout({ children }: Props) {
         width="calc(100vw - 250px)"
         height="calc(100vh - 60px - 180px)"
       >
-        {children}
+        <Outlet />
       </Box>
     </Flex>
   );

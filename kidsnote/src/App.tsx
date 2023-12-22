@@ -1,12 +1,17 @@
 import React from 'react';
+import { BrowserRouter, useRoutes } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 
-import ReportPage from './components/ReportPage';
+import appRoutes from './appRoutes';
 
 export default function App() {
+  const element = useRoutes(appRoutes);
+
   return (
     <ChakraProvider>
-      <ReportPage />
+      <BrowserRouter basename="/service">
+        {element}
+      </BrowserRouter>
     </ChakraProvider>
   );
 }
