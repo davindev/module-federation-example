@@ -1,24 +1,24 @@
-import React, { Suspense } from 'react';
-import { ChakraProvider, Center, Spinner } from '@chakra-ui/react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import AppRoutes from './AppRoutes';
+import GlobalLayout from './GlobalLayout';
+
+const KidsnoteApp = React.lazy(() => import('kidsnote/App'));
 
 export default function App() {
   return (
-    <ChakraProvider>
-      <Suspense fallback={(
-        <Center height="100vh">
-          <Spinner
-            thickness="4px"
-            speed="0.65s"
-            emptyColor="#e9ecef"
-            color="#208df9"
-            size="xl"
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={<GlobalLayout />}
+        >
+          <Route
+            path="/service/*"
+            element={<KidsnoteApp />}
           />
-        </Center>
-      )}>
-        <AppRoutes />
-      </Suspense>
-    </ChakraProvider>
+        </Route>
+      </Routes>
+    </Router>
   );
 }

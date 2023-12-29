@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Flex, Text } from '@chakra-ui/react';
 
 export default function Lnb() {
@@ -24,23 +24,23 @@ export default function Lnb() {
       backgroundColor="#ffffff"
       borderRight="1px solid #e9ecef"
     >
-      <a href="/service/report">
+      <Link to="/report">
         <Text {...getStyleProps('report')}>
           알림장
         </Text>
-      </a>
+      </Link>
 
-      <a href="/service/notice">
+      <Link to="/notice">
         <Text {...getStyleProps('notice')}>
           공지사항
         </Text>
-      </a>
+      </Link>
 
-      <a href="/service/album">
+      <Link to="/album">
         <Text {...getStyleProps('album')}>
           앨범
         </Text>
-      </a>
+      </Link>
     </Flex>
   )
 }
