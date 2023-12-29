@@ -8,19 +8,19 @@ const AlbumPage = React.lazy(() => import('./components/AlbumPage'));
 
 const appRoutes = [
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     children: [
       {
-        path: "report",
+        path: 'report',
         element: <ReportPage />,
       },
       {
-        path: "notice",
+        path: 'notice',
         element: <NoticePage />,
       },
       {
-        path: "album",
+        path: 'album',
         element: <AlbumPage />,
       },
     ],
