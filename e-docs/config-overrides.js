@@ -16,11 +16,10 @@ module.exports = {
           template: './public/index.html',
         }),
         new ModuleFederationPlugin({
-          name: 'main',
-          remotes: {
-            layout: 'layout@http://localhost:3000/remoteEntry.js',
-            kidsnote: 'kidsnote@http://localhost:3002/remoteEntry.js',
-            e_docs: 'e_docs@http://localhost:3003/remoteEntry.js',
+          name: 'e_docs',
+          filename: 'remoteEntry.js',
+          exposes: {
+            './App': './src/App',
           },
           shared: {
             react: {
@@ -46,7 +45,7 @@ module.exports = {
   devServer: (configFunction) => {
     return (proxy, allowedHost) => ({
       ...configFunction(proxy, allowedHost),
-      port: 3001,
+      port: 3003,
       host: 'localhost',
       static: {
         directory: path.resolve(__dirname, 'build'),

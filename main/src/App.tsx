@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GlobalLayout from './GlobalLayout';
 
 const KidsnoteApp = React.lazy(() => import('kidsnote/App'));
+const EDocsApp = React.lazy(() => import('e_docs/App'));
 
 export default function App() {
   return (
@@ -16,6 +17,10 @@ export default function App() {
           <Route
             path="/service/*"
             element={<KidsnoteApp />}
+          />
+          <Route
+            path="/e-docs/*"
+            element={<EDocsApp />}
           />
         </Route>
       </Routes>
