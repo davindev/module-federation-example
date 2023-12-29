@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 export default function App() {
   return (
     <>
-      <Header />
+      <Header appName="service" />
       <Box
         position="fixed"
         left="0"
