@@ -24,6 +24,8 @@ module.exports = {
           shared: {
             react: {
               eager: true,
+              singleton: true,
+              requiredVersion: '^18.2.0',
             },
           },
         }),
